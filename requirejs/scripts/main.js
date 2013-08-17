@@ -23,9 +23,9 @@ require(['jquery'],function($){ //require函数的第一个参数是数组，数
 	 * 在实现中就避免了访问或者声明全局的变量或者函数，有效的避免大量而且复杂的命名空间管理。
 	 */
 	$("#load").click(function(){
-		require(["student","class"], function(student,clz) {
+		require(["student","class"], function(student,clz) {// student,clz 把这些”全局变量”作为参数传递到模块的实现体里，
 			var students = [{name:'杰克',gender:'男'},{name:'rose',gender:'female'}];
-			var i=0, ilth = students.length;
+			var i=0, ilth = students.length;//for循环的优化写法
 			for(;i<ilth;i++){
 				clz.addToClass(student.createStudent(students[i]));
 			}
